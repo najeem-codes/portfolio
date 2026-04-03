@@ -440,6 +440,34 @@ body {
 }
 .attach-note::before { content: '📎'; font-size: 18px; }
 @media (max-width: 768px) { .cred-grid { grid-template-columns: 1fr; } }
+/* ── CONTACT ─────────────────────────────────────────── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.contact-info { display: flex; flex-direction: column; gap: 20px; }
+.contact-detail { display: flex; align-items: center; gap: 14px; }
+.contact-detail-icon {
+  width: 36px; height: 36px;
+  background: rgba(196,163,90,0.1); border: 1px solid rgba(196,163,90,0.2);
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0;
+}
+.contact-detail-text { font-size: 15px; color: rgba(255,255,255,0.7); transition: color 0.2s; }
+a.contact-detail-text:hover { color: var(--gold); }
+.contact-socials { display: flex; gap: 12px; margin-top: 8px; }
+.contact-form { display: flex; flex-direction: column; gap: 14px; }
+.form-group { width: 100%; }
+.form-input {
+  width: 100%; background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;
+  padding: 14px 16px; font-family: 'DM Sans', sans-serif;
+  font-size: 14px; color: rgba(255,255,255,0.8); transition: border-color 0.2s; outline: none;
+}
+.form-input::placeholder { color: rgba(255,255,255,0.3); }
+.form-input:focus { border-color: rgba(196,163,90,0.5); }
+.form-textarea { resize: vertical; min-height: 100px; }
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+/* ── FOOTER ──────────────────────────────────────────── */
+.site-footer { background: var(--navy-deep); text-align: center; padding: 32px; }
+.site-footer p { font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 1px; }
 </style>
 </head>
 <body>
@@ -702,8 +730,49 @@ body {
     </div>
   </div>
 </section>
-<!-- CONTACT -->
-<!-- FOOTER -->
+<!-- ── CONTACT ────────────────────────────────────────── -->
+<section id="contact" style="background: var(--navy);">
+  <div class="section-inner fade-in">
+    <p class="section-label section-label--gold">Contact</p>
+    <h2 class="section-title section-title--white">Let's connect</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-detail">
+          <span class="contact-detail-icon">✉</span>
+          <a href="mailto:njmtdeen@gmail.com" class="contact-detail-text">njmtdeen@gmail.com</a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📍</span>
+          <span class="contact-detail-text">Zürich, Switzerland</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📞</span>
+          <a href="tel:+41787447675" class="contact-detail-text">+41 78 744 76 75</a>
+        </div>
+        <div class="contact-socials">
+          <a href="https://github.com/najeem-codes" target="_blank" rel="noreferrer" class="btn btn-gold btn-sm">GitHub</a>
+          <a href="#" class="btn btn-outline-gold btn-sm">LinkedIn</a>
+        </div>
+      </div>
+      <form class="contact-form" action="mailto:njmtdeen@gmail.com" method="GET" enctype="text/plain">
+        <div class="form-group">
+          <input type="text" name="subject" placeholder="Your name" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your email" class="form-input">
+        </div>
+        <div class="form-group">
+          <textarea name="body" placeholder="Your message..." class="form-input form-textarea" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center;">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer class="site-footer">
+  <p>© 2026 Najeem Takiyu-Deen · njmtdeen@gmail.com · Zürich, Switzerland</p>
+</footer>
 
 <script>
 /* ── JS GOES HERE (Task 11) ── */

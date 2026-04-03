@@ -339,6 +339,47 @@ body {
 }
 @media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } }
+/* ── PROJECTS ────────────────────────────────────────── */
+.projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.project-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(27,27,47,0.12); }
+.project-card-header {
+  height: 140px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--crystal) 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.project-flag { font-size: 48px; position: relative; z-index: 2; }
+.project-header-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 70% 50%, rgba(196,163,90,0.15) 0%, transparent 60%);
+}
+.project-card-body { padding: 24px; }
+.project-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.project-tag {
+  font-size: 10px; padding: 3px 10px;
+  background: rgba(58,97,134,0.1); border-radius: 10px; color: var(--crystal); font-weight: 500;
+}
+.project-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 600; color: var(--navy); margin-bottom: 10px;
+}
+.project-desc { font-size: 14px; line-height: 1.65; color: var(--muted); margin-bottom: 20px; }
+.project-links { display: flex; gap: 10px; }
+.btn-sm { padding: 8px 18px; font-size: 12px; }
+.project-card--placeholder {
+  border: 2px dashed var(--border); background: transparent;
+  display: flex; align-items: center; justify-content: center; min-height: 280px;
+}
+.project-card--placeholder:hover { transform: none; box-shadow: none; border-color: var(--crystal); }
+.project-placeholder-inner { text-align: center; color: var(--muted); }
+.project-placeholder-icon { font-size: 32px; margin-bottom: 8px; color: var(--border); }
+.project-placeholder-inner p { font-size: 14px; }
+@media (max-width: 600px) { .projects-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -482,7 +523,44 @@ body {
     </div>
   </div>
 </section>
-<!-- PROJECTS -->
+<!-- ── PROJECTS ───────────────────────────────────────── -->
+<section id="projects" style="background: var(--cream);">
+  <div class="section-inner fade-in">
+    <p class="section-label">Projects</p>
+    <h2 class="section-title">Selected work</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-card-header">
+          <span class="project-flag">🇬🇭</span>
+          <div class="project-header-bg"></div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Vite</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <h3 class="project-title">GhanaSource</h3>
+          <p class="project-desc">
+            Product sourcing platform for Ghana entrepreneurs. Browse suppliers from
+            China, India &amp; UAE, calculate landed costs with Ghana import duties
+            (VAT, NHIL, GETFUND), and track your sourcing pipeline from research to arrival.
+          </p>
+          <div class="project-links">
+            <a href="https://najeem-codes.github.io/ghana-sourcing-app/" target="_blank" rel="noreferrer" class="btn btn-gold btn-sm">Live Site ↗</a>
+            <a href="https://github.com/najeem-codes/ghana-sourcing-app" target="_blank" rel="noreferrer" class="btn btn-outline-crystal btn-sm">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card project-card--placeholder">
+        <div class="project-placeholder-inner">
+          <div class="project-placeholder-icon">+</div>
+          <p>More projects coming soon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- EXPERIENCE -->
 <!-- CREDENTIALS -->
 <!-- CONTACT -->

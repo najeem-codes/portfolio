@@ -32,7 +32,7 @@ ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
 /* ── BASE ────────────────────────────────────────────── */
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
 
 body {
   font-family: 'DM Sans', sans-serif;
@@ -476,7 +476,7 @@ a.contact-detail-text:hover { color: var(--gold); }
 <header class="site-header" id="site-header">
   <nav class="nav-inner">
     <a href="#hero" class="nav-logo">NT</a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="nav-links">

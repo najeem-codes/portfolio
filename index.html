@@ -206,6 +206,101 @@ body {
   .nav-link { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
   .nav-link:last-child { border-bottom: none; }
 }
+/* ── HERO ────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  background: var(--navy);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 64px;
+}
+.hero-bg-orb { position: absolute; border-radius: 50%; pointer-events: none; }
+.hero-bg-orb--1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(58,97,134,0.18) 0%, transparent 70%);
+  top: -100px; right: -100px;
+}
+.hero-bg-orb--2 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(196,163,90,0.12) 0%, transparent 70%);
+  bottom: 50px; left: 80px;
+}
+.hero-left {
+  padding: 80px 60px 80px 100px;
+  position: relative;
+  z-index: 2;
+}
+.hero-eyebrow {
+  font-size: 11px; font-weight: 500; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px; font-weight: 300; line-height: 1.05;
+  color: var(--white); margin-bottom: 16px;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+.hero-name em { font-style: italic; color: var(--crystal-light); }
+.hero-title {
+  font-size: 16px; font-weight: 300; color: var(--crystal-light);
+  margin-bottom: 36px; line-height: 1.6;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+.hero-contact {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.7s 0.4s ease both;
+}
+.contact-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.6); }
+.contact-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+.hero-badges {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px;
+  animation: fadeUp 0.7s 0.5s ease both;
+}
+.hero-badge {
+  padding: 6px 16px;
+  border: 1px solid rgba(196,163,90,0.4);
+  border-radius: 20px; font-size: 11px; font-weight: 500;
+  letter-spacing: 1px; text-transform: uppercase; color: var(--gold-light);
+}
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; animation: fadeUp 0.7s 0.6s ease both; }
+.hero-right {
+  display: flex; align-items: center; justify-content: center;
+  padding: 80px; position: relative; z-index: 2;
+  animation: fadeUp 0.9s 0.3s ease both;
+}
+.photo-frame { position: relative; }
+.photo-frame::before {
+  content: ''; position: absolute; inset: -12px;
+  border: 1px solid rgba(196,163,90,0.3); border-radius: 50%;
+}
+.photo-frame::after {
+  content: ''; position: absolute; inset: -24px;
+  border: 1px solid rgba(58,97,134,0.2); border-radius: 50%;
+}
+.photo-circle {
+  width: 280px; height: 280px; border-radius: 50%;
+  object-fit: cover; border: 3px solid rgba(196,163,90,0.5);
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-eyebrow, .hero-name, .hero-title, .hero-contact,
+  .hero-badges, .hero-ctas, .hero-right { animation: none; }
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 64px; }
+  .hero-left { padding: 60px 24px 32px; }
+  .hero-right { padding: 0 24px 60px; }
+  .hero-name { font-size: 44px; }
+  .photo-circle { width: 200px; height: 200px; }
+}
 </style>
 </head>
 <body>
@@ -227,7 +322,39 @@ body {
     </ul>
   </nav>
 </header>
-<!-- HERO -->
+<!-- ── HERO ───────────────────────────────────────────── -->
+<section class="hero" id="hero">
+  <div class="hero-bg-orb hero-bg-orb--1"></div>
+  <div class="hero-bg-orb hero-bg-orb--2"></div>
+  <div class="hero-left">
+    <p class="hero-eyebrow">Portfolio · Data Analytics</p>
+    <h1 class="hero-name">Najeem<br><em>Takiyu-Deen</em><br>BSc.</h1>
+    <p class="hero-title">
+      Global CRM Insights &amp; Customer Data Analyst<br>
+      SQL · Python · Power BI · Agile / Scrum Certified
+    </p>
+    <div class="hero-contact">
+      <div class="contact-item"><span class="contact-dot"></span>njmtdeen@gmail.com</div>
+      <div class="contact-item"><span class="contact-dot"></span>+41 78 744 76 75</div>
+      <div class="contact-item"><span class="contact-dot"></span>Zürich, Switzerland</div>
+    </div>
+    <div class="hero-badges">
+      <span class="hero-badge">SQL</span>
+      <span class="hero-badge">Python</span>
+      <span class="hero-badge">Power BI</span>
+      <span class="hero-badge">Scrum Certified</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn btn-gold">View Projects</a>
+      <a href="#contact" class="btn btn-outline-gold">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="photo-frame">
+      <img src="assets/photo.webp" alt="Najeem Takiyu-Deen" class="photo-circle" />
+    </div>
+  </div>
+</section>
 <!-- ABOUT -->
 <!-- SKILLS -->
 <!-- PROJECTS -->

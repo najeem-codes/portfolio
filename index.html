@@ -775,7 +775,65 @@ a.contact-detail-text:hover { color: var(--gold); }
 </footer>
 
 <script>
-/* ── JS GOES HERE (Task 11) ── */
+// ── NAV: scroll transparency + active section highlight ──
+const header = document.getElementById('site-header');
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id], footer');
+
+window.addEventListener('scroll', () => {
+  // Toggle scrolled class for nav background
+  if (window.scrollY > 80) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+
+  // Highlight active nav link
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// ── HAMBURGER MENU ──────────────────────────────────────
+const hamburger = document.getElementById('nav-hamburger');
+const navList = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = hamburger.classList.toggle('open');
+  navList.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+// Close menu when a link is clicked
+navList.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navList.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// ── SCROLL ANIMATIONS (IntersectionObserver) ────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); // animate once only
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>

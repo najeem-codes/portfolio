@@ -319,6 +319,26 @@ body {
 }
 .stat-label { font-size: 12px; color: var(--muted); }
 @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+/* ── SKILLS ──────────────────────────────────────────── */
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.skill-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 28px; transition: background 0.2s;
+}
+.skill-card:hover { background: rgba(58,97,134,0.15); }
+.skill-icon {
+  width: 36px; height: 36px; background: rgba(196,163,90,0.15);
+  border-radius: 8px; display: flex; align-items: center;
+  justify-content: center; font-size: 18px; margin-bottom: 16px;
+}
+.skill-name { font-size: 15px; font-weight: 500; color: var(--white); margin-bottom: 10px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tag {
+  font-size: 11px; padding: 3px 10px;
+  background: rgba(58,97,134,0.25); border-radius: 10px; color: var(--crystal-light);
+}
+@media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -403,7 +423,65 @@ body {
     </div>
   </div>
 </section>
-<!-- SKILLS -->
+<!-- ── SKILLS ─────────────────────────────────────────── -->
+<section id="skills" style="background: var(--navy);">
+  <div class="section-inner fade-in">
+    <p class="section-label section-label--gold">Skills</p>
+    <h2 class="section-title section-title--white">Technical toolkit</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <div class="skill-name">Data Analytics</div>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL</span><span class="skill-tag">Python</span>
+          <span class="skill-tag">KPI Design</span><span class="skill-tag">Root Cause Analysis</span>
+          <span class="skill-tag">Data Quality</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📈</div>
+        <div class="skill-name">Reporting &amp; Visualisation</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Power BI</span><span class="skill-tag">Dashboards</span>
+          <span class="skill-tag">Automated Reporting</span><span class="skill-tag">Stakeholder Presentations</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-name">Automation &amp; Systems</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python Scripts</span><span class="skill-tag">ServiceNow</span>
+          <span class="skill-tag">Microsoft 365</span><span class="skill-tag">SharePoint</span>
+          <span class="skill-tag">Confluence</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔄</div>
+        <div class="skill-name">Agile &amp; Delivery</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Scrum (Certified)</span><span class="skill-tag">Sprint Planning</span>
+          <span class="skill-tag">Retrospectives</span><span class="skill-tag">Iterative Delivery</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🗄️</div>
+        <div class="skill-name">Data Management</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Data Cleansing</span><span class="skill-tag">Reconciliation</span>
+          <span class="skill-tag">Multi-source Integration</span><span class="skill-tag">Audit Trails</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🤝</div>
+        <div class="skill-name">Collaboration</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Cross-functional Teams</span><span class="skill-tag">Documentation</span>
+          <span class="skill-tag">Knowledge Transfer</span><span class="skill-tag">SLA Compliance</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- PROJECTS -->
 <!-- EXPERIENCE -->
 <!-- CREDENTIALS -->

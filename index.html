@@ -125,11 +125,108 @@ body {
   .section-inner { padding: 60px 24px; }
   .section-title { font-size: 32px; }
 }
+/* ── NAV ─────────────────────────────────────────────── */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: transparent;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.site-header.scrolled {
+  background: rgba(27, 27, 47, 0.97);
+  box-shadow: 0 1px 0 rgba(196,163,90,0.15);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--gold);
+}
+.nav-links {
+  display: flex;
+  gap: 4px;
+}
+.nav-link {
+  padding: 8px 16px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 768px) {
+  .nav-inner { padding: 0 24px; }
+  .nav-hamburger { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    background: rgba(27,27,47,0.98);
+    flex-direction: column;
+    padding: 16px 24px 24px;
+    border-top: 1px solid rgba(196,163,90,0.15);
+    gap: 0;
+  }
+  .nav-links.open { display: flex; }
+  .nav-link { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .nav-link:last-child { border-bottom: none; }
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ── NAV ────────────────────────────────────────────── -->
+<header class="site-header" id="site-header">
+  <nav class="nav-inner">
+    <a href="#hero" class="nav-logo">NT</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#credentials" class="nav-link">Credentials</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 <!-- HERO -->
 <!-- ABOUT -->
 <!-- SKILLS -->

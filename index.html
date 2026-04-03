@@ -778,7 +778,7 @@ a.contact-detail-text:hover { color: var(--gold); }
 // ── NAV: scroll transparency + active section highlight ──
 const header = document.getElementById('site-header');
 const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('section[id], footer');
+const sections = document.querySelectorAll('section[id]');
 
 window.addEventListener('scroll', () => {
   // Toggle scrolled class for nav background
@@ -811,7 +811,7 @@ const navList = document.getElementById('nav-links');
 hamburger.addEventListener('click', () => {
   const isOpen = hamburger.classList.toggle('open');
   navList.classList.toggle('open');
-  hamburger.setAttribute('aria-expanded', isOpen);
+  hamburger.setAttribute('aria-expanded', String(isOpen));
 });
 
 // Close menu when a link is clicked

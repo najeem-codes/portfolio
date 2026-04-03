@@ -412,6 +412,34 @@ body {
   content: ''; position: absolute; left: 0; top: 9px;
   width: 5px; height: 1px; background: var(--crystal);
 }
+/* ── CREDENTIALS ─────────────────────────────────────── */
+.cred-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px; }
+.cred-card {
+  border: 1px solid var(--border); border-radius: 12px;
+  padding: 28px; position: relative; overflow: hidden;
+}
+.cred-card::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.cred-card--crystal::after { background: var(--crystal); }
+.cred-card--gold::after    { background: linear-gradient(90deg, var(--crystal), var(--gold)); }
+.cred-card--light::after   { background: var(--crystal-light); }
+.cred-year {
+  font-size: 11px; color: var(--gold); font-weight: 500;
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;
+}
+.cred-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 6px;
+}
+.cred-org { font-size: 13px; color: var(--muted); font-style: italic; line-height: 1.5; }
+.attach-note {
+  background: rgba(58,97,134,0.06); border: 1px solid rgba(58,97,134,0.15);
+  border-radius: 10px; padding: 20px 24px; font-size: 14px; color: var(--crystal);
+  display: flex; align-items: center; gap: 12px;
+}
+.attach-note::before { content: '📎'; font-size: 18px; }
+@media (max-width: 768px) { .cred-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -647,7 +675,33 @@ body {
     </div>
   </div>
 </section>
-<!-- CREDENTIALS -->
+<!-- ── CREDENTIALS ────────────────────────────────────── -->
+<section id="credentials" style="background: var(--white);">
+  <div class="section-inner fade-in">
+    <p class="section-label">Credentials</p>
+    <h2 class="section-title">Education &amp; Certifications</h2>
+    <div class="cred-grid">
+      <div class="cred-card cred-card--crystal">
+        <div class="cred-year">2020 – 2024</div>
+        <div class="cred-title">BSc. Business Informatics</div>
+        <div class="cred-org">FHNW Basel — University of Applied Sciences &amp; Arts Northwestern Switzerland</div>
+      </div>
+      <div class="cred-card cred-card--gold">
+        <div class="cred-year">2025</div>
+        <div class="cred-title">Scrum Certification</div>
+        <div class="cred-org">Certified Scrum practitioner — Agile sprint delivery, iterative improvement, cross-team collaboration</div>
+      </div>
+      <div class="cred-card cred-card--light">
+        <div class="cred-year">In Progress</div>
+        <div class="cred-title">Power BI &amp; SQL Advanced</div>
+        <div class="cred-org">Actively developing data visualisation and advanced query skills for analytics environments</div>
+      </div>
+    </div>
+    <div class="attach-note">
+      University certificate, professional job references, and all other certificates are available on request.
+    </div>
+  </div>
+</section>
 <!-- CONTACT -->
 <!-- FOOTER -->
 

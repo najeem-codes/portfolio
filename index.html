@@ -301,6 +301,24 @@ body {
   .hero-name { font-size: 44px; }
   .photo-circle { width: 200px; height: 200px; }
 }
+/* ── ABOUT ───────────────────────────────────────────── */
+.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 60px; align-items: start; }
+.about-text { font-size: 17px; line-height: 1.85; color: #3C3C50; font-weight: 300; }
+.about-stats { display: flex; flex-direction: column; gap: 20px; }
+.stat-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px; position: relative; overflow: hidden;
+}
+.stat-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px; background: var(--crystal);
+}
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px; font-weight: 300; color: var(--navy); line-height: 1; margin-bottom: 4px;
+}
+.stat-label { font-size: 12px; color: var(--muted); }
+@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
 </style>
 </head>
 <body>
@@ -355,7 +373,36 @@ body {
     </div>
   </div>
 </section>
-<!-- ABOUT -->
+<!-- ── ABOUT ──────────────────────────────────────────── -->
+<section id="about" style="background: var(--cream);">
+  <div class="section-inner fade-in">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Data meets<br>operational insight</h2>
+    <div class="about-grid">
+      <p class="about-text">
+        BSc. Business Informatics graduate with hands-on experience translating raw operational
+        and IT data into structured insights, automated reporting, and process improvements.
+        Scrum-certified practitioner who thrives at the intersection of analytics and
+        cross-functional teamwork. Passionate about leveraging SQL, Python, and data
+        visualisation to help organisations make smarter, faster, customer-centric decisions.
+      </p>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">Years professional IT &amp; data experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">BSc.</div>
+          <div class="stat-label">Business Informatics — FHNW Basel</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">Zürich</div>
+          <div class="stat-label">Based in Switzerland · Available immediately</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- SKILLS -->
 <!-- PROJECTS -->
 <!-- EXPERIENCE -->

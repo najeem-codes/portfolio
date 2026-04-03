@@ -380,6 +380,38 @@ body {
 .project-placeholder-icon { font-size: 32px; margin-bottom: 8px; color: var(--border); }
 .project-placeholder-inner p { font-size: 14px; }
 @media (max-width: 600px) { .projects-grid { grid-template-columns: 1fr; } }
+/* ── EXPERIENCE ──────────────────────────────────────── */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: ''; position: absolute; left: 6px; top: 8px; bottom: 0;
+  width: 1px; background: var(--border);
+}
+.timeline-item { position: relative; margin-bottom: 48px; }
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-dot {
+  position: absolute; left: -32px; top: 6px;
+  width: 13px; height: 13px; border-radius: 50%;
+  background: var(--crystal); border: 2px solid var(--cream);
+  box-shadow: 0 0 0 3px rgba(58,97,134,0.2);
+}
+.timeline-date {
+  font-size: 11px; font-weight: 500; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--crystal); margin-bottom: 6px;
+}
+.timeline-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 2px;
+}
+.timeline-company { font-size: 13px; color: var(--muted); margin-bottom: 16px; font-style: italic; }
+.timeline-bullets { display: flex; flex-direction: column; gap: 8px; }
+.timeline-bullets li {
+  font-size: 14px; line-height: 1.6; color: #4A4A5A;
+  padding-left: 16px; position: relative;
+}
+.timeline-bullets li::before {
+  content: ''; position: absolute; left: 0; top: 9px;
+  width: 5px; height: 1px; background: var(--crystal);
+}
 </style>
 </head>
 <body>
@@ -561,7 +593,60 @@ body {
     </div>
   </div>
 </section>
-<!-- EXPERIENCE -->
+<!-- ── EXPERIENCE ─────────────────────────────────────── -->
+<section id="experience" style="background: var(--cream);">
+  <div class="section-inner fade-in">
+    <p class="section-label">Experience</p>
+    <h2 class="section-title">Professional journey</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Dec 2024 – Present</div>
+        <div class="timeline-role">Data Center Operations &amp; Security Officer</div>
+        <div class="timeline-company">Protectas SA at AWS Data Center · Zürich</div>
+        <ul class="timeline-bullets">
+          <li>Maintain structured operational databases tracking access events and incidents, developing data accuracy skills directly applicable to CRM data management</li>
+          <li>Design and maintain daily performance reporting formats and escalation workflows — analogous to CRM performance cockpit and KPI monitoring</li>
+          <li>Analyse recurring incident patterns to identify root causes and recommend iterative process improvements</li>
+          <li>Collaborate cross-functionally with AWS site teams, demonstrating stakeholder communication across technical and non-technical audiences</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Jun 2024 – Jan 2025</div>
+        <div class="timeline-role">IT Service Desk Technician</div>
+        <div class="timeline-company">Altor Equity · Switzerland (Freelance)</div>
+        <ul class="timeline-bullets">
+          <li>Tracked and structured incident data in ServiceNow, performing trend analysis and root cause identification to improve data quality</li>
+          <li>Built and maintained SharePoint and ShareDrive frameworks — equivalent to CRM team sites and data collaboration structures</li>
+          <li>Produced structured management reports and knowledge base documentation for consistent, high-quality findings delivery</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Dec 2020 – Nov 2024</div>
+        <div class="timeline-role">IT Consultant &amp; Automation Specialist</div>
+        <div class="timeline-company">STECHAD · Switzerland (Freelance)</div>
+        <ul class="timeline-bullets">
+          <li>Developed Python automation scripts and Slack bots to replace manual reporting tasks — directly comparable to automated no-touch reporting pipelines</li>
+          <li>Managed multi-source data collection, cleansing, and integration ensuring consistency and eliminating data gaps</li>
+          <li>Translated complex technical findings into clear presentations for senior stakeholders across diverse client environments</li>
+          <li>Applied Agile/Scrum methodology delivering iterative improvements within sprint frameworks</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Jul 2020 – Jan 2021</div>
+        <div class="timeline-role">Logistician</div>
+        <div class="timeline-company">Swiss Post · Zürich</div>
+        <ul class="timeline-bullets">
+          <li>Managed technical inventory data ensuring accurate reconciliation and cross-referencing against third-party sources</li>
+          <li>Identified and resolved data discrepancies, developing strong attention to detail and data quality discipline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- CREDENTIALS -->
 <!-- CONTACT -->
 <!-- FOOTER -->
